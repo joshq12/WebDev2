@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,3 +36,42 @@ btn.addEventListener('click', (evt) => {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String Exercise 3</title>
+	<style>
+	  body {
+	     width:400px;
+		 margin:0 auto;
+	  }
+	  
+	  p {
+	     border: solid black 1px;
+		 height: 20px;
+	  }
+	</style>
+</head>
+
+<body>
+<h1>String Exercise Three</h1>
+<p id = "result"></p>
+<button>String Exercise 3</button>
+
+<script>
+const btn = document.querySelector('button');
+  
+btn.addEventListener('click', (evt) => {
+  let date = ("2026-02-04");
+  let newdate = date.split("-")
+ document.querySelector('#result').innerHTML = `(${newdate[2] }- ${newdate[1] }- ${newdate[0] } `
+
+
+ });
+</script>
+
+</body>
+</html>
+>>>>>>> 148251a8b6ec3a3e0863ed10238d5ebd867b24bd
