@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String Exercise 2</title>
+	<style>
+	  body {
+	     width:400px;
+		 margin:0 auto;
+	  }
+	  
+	  p {
+	     border: solid black 1px;
+		 height: 20px;
+	  }
+	</style>
+</head>
+
+<body>
+<h1>String Exercise Two</h1>
+<p id = "input"></p>
+<p id = "length"></p>
+<p id = "firstDot"></p>
+<p id = "lastDot"></p>
+<p id = "symbol"></p>
+<button>String Exercise 2</button>
+
+<script>
+
+const btn = document.querySelector('button');
+  
+btn.addEventListener('click', (evt) => {
+   let you = prompt("Enter your Email", "");
+      document.querySelector('#input').innerHTML = `The email entered was (${you})`;
+	  document.querySelector('#length').innerHTML = `The length of your email (${you}) is ${you.length}`;
+	  document.querySelector('#firstDot').innerHTML = `The position of the first (${you}) is ${you.charAt(0)}`;
+	  document.querySelector('#lastDot').innerHTML = `The position of the last (${you}) is ${(you.lastIndexOf(`-1`))}`;
+	  document.querySelector('#symbol').innerHTML = `The position of the @ symbol in (${you}) is ${you.indexOf(`@`)}`;
+	});
+
+	
+      
+
+	
+	
+</script>
+
+</body>
+</html>
