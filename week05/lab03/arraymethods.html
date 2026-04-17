@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<title>Array Methods</title>
+</head>
+<body>
+<h1>Array Methods</h1>
+<p id = "list1"></p>
+<p id = "list2"></p>
+<p id = "list3"></p>
+<p id = "list4"></p>
+<script>
+const numbers = [12, 5, 8, 130, 44, 2, 19];
+document.querySelector('#list1').textContent =  `Array elements: ${numbers.join(", ")}`;
+document.querySelector('#list2').textContent =  `Array elements: ${numbers.join(", ")}`;
+document.querySelector('#list3').textContent =  `Array elements: ${numbers.join(", ")}`;
+document.querySelector('#list4').textContent =  `Array elements: ${numbers.join(", ")}`;
+
+list1.textContent = `Array elements: ${numbers.join(", ")}`;
+
+const mapped = numbers.map(num => num * 2);
+list3.textContent = `Array values doubled: ${mapped.join(", ")}`;
+
+numbers.sort((a, b) => a - b);
+list4.textContent = `Sorted Array: ${numbers.join(", ")}`;
+</script>
+</body>
+</html>

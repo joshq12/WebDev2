@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template Exercise 1</title>
+</head>
+
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+<script id="body" type="text/x-handlebars-template">
+  <p>You can find me in <b>{{city}},</b>My address is <b>{{number}}</b> {{street}}</p>
+</script>
+
+<script>
+
+const context={
+    "city": "London",
+    "street": "Baker Street",
+    "number": "221B"
+}
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+<script>
+ const template = Handlebars.compile(document.querySelector("#body").innerHTML);
+ document.body.innerHTML = template(context);
+</script>
+</body>
+</html>
