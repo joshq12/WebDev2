@@ -26,15 +26,23 @@
 	<script>
 		const btn = document.querySelector('button');
 
-		btn.addEventListener('click', (evt) => {
-			let code = prompt("")
-			let num = code.substring()
-			let area = code.substring()
-			let circumference = code.substring()
-			
+		btn.addEventListener('click', () => {
+			let radius = parseFloat(prompt("Enter the radius of the circle:"));
+		if (isNaN(radius) || radius <= 0) {
+				alert("Please enter a valid positive number.");
+				return;
+			}
+		
+	let area = Math.PI * Math.pow(radius, 2);
+			let circumference = 2 * Math.PI * radius;
 
+			area = area.toFixed(5);
+			circumference = circumference.toFixed(5);
 
-		})
+			document.querySelector('#num').innerHTML = `The number input is ${radius}`;
+			document.querySelector('#area').innerHTML = `The area of the circle is ${area}`;
+			document.querySelector('#circumference').innerHTML = `The circumference of the circle is ${circumference}`; 
+           });
 	</script>
 </body>
 

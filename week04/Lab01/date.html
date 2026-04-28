@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Date()</title>
+ </head>
+ 
+ <body>
+ <p id="copyright"></p>
+ <script src="script.js"></script>
+<body let today = new Date();
+let message = "\u00A9 " + JavaScipt ></body>
+<script>
+const now = new Date();
+
+
+  const year = now.getFullYear();       
+  const month = now.getMonth() + 1;     
+  const day = now.getDate();            
+  const hour = now.getHours();          
+  const minutes = now.getMinutes();     
+  const seconds = now.getSeconds();
+
+  const dateString = `Today is ${day}/${month}/${year} ${hour}:${minutes}:${seconds}`;
+
+   document.getElementById("dateOutput").innerText = dateString;
+ </script>
+ </body>
+ </html>
