@@ -1,0 +1,627 @@
+/* ===== Global Page Styles ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f9f6;
+    color: #333;
+    text-align: center;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    color: white;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ===== Sections ===== */
+section {
+    background-color: white;
+    margin: 40px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* ===== Images ===== */
+img {
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(67, 160, 71, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.uniform-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.image-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+img:hover {
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.5);
+}
+
+/* Make all images the same size */
+.uniform-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===== Buttons ===== */
+button {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ffa726, #fb8c00);
+    transform: scale(1.05);
+}
+
+/* ===== Extra Info Box ===== */
+#moreInfo {
+    margin-top: 20px;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    color: #2e7d32;
+}
+
+
+* Top-left corner link */
+.top-left-link {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+/* Hover effect */
+.top-left-link:hover {
+    background-color: #43a047;
+}
+
+
+header {
+    position: relative;
+}
+
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.image-wrapper img:first-child {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Image on top */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Text below image */
+.dog-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.dog-info p {
+    margin: 6px 0;
+}
+
+
+.dog-info {
+    text-align: center;
+}
+
+
+dog-info strong {
+    color: #4CAF50;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+
+ cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#dog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: lightgreen;
+
+padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #222;
+}
+
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   LIGHTBOX IMAGE GALLERY
+   ========================= */
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 2000;
+}
+
+#lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightboxImage {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 12px;
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+#lightbox.show #lightboxImage {
+    transform: scale(1);
+}
+
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Hover effect for gallery images */
+.uniform-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uniform-image:hover {
+    transform: scale(1.05);
+}
+
+
+* Base image styling */
+.uniform-image {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border-radius: 12px;
+}
+
+/* Hover effect (nice bonus) */
+.uniform-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Click animation */
+.uniform-image.clicked {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(255, 200, 0, 0.8);
+  filter: brightness(1.2);
+}
+
+/* Lightbox animation */
+#lightboxImage {
+  animation: zoomIn 0.35s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
+#gallery img{
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+}
+
+#uniform-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto; /* center the gallery */
+}
+
+#uniform-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.top-left-link {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ background: linear-gradient(135deg, #4CAF50, #2ecc71);
+  color: white;
+
+  font-size: 22px;
+  text-decoration: none;
+
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+.top-left-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-image: url("images/123.jpg");
+  background-size: cover;        /* fills the screen */
+  background-position: center;   /* centers the image */
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* subtle parallax effect */
+
+  color: #333;
+}
+
+section,
+.card {
+  background: rgba(255, 255, 255, 0.9); /* soft white overlay */
+  border-radius: 12px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+}
+
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.6); /* see-through white */
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 120px auto 40px; /* space from top buttons */
+  text-align: center;
+ position: relative;
+  z-index: 2;
+
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  /* Optional glass blur effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.glass-box h1 {
+  margin-top: 0;
+}
+
+.glass-box p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* -------------------------
+   TOP-LEFT (HOME)
+-------------------------- */
+
+
+
+.top-left-container {
+  position: fixed;        /* keeps it on top of the page */
+  top: 10px;
+  left: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+
+  z-index: 1000;          /* ✅ THIS IS THE KEY FIX */
+}
+
+
+
+
+.top-left-label {
+  display: block;           /* ✅ forces new line */
+  margin-top: 60px;          /* ✅ space BELOW emoji */
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.top-left-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  font-size: 28px;
+
+  border-radius: 50%;
+  background: green;
+  text-decoration: none;
+}
+
+
+
+
+
+/* -------------------------
+   TOP-RIGHT (DOG BREEDS)
+-------------------------- */
+.top-right-container {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: max-content;
+  text-align: center;
+  z-index: 1000;
+}
+
+.top-right-link {
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.top-right-label {
+  margin-top: 4px;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+
+/* -------------------------
+   CENTERED MAIN CONTENT
+-------------------------- */
+.content {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.carousel {
+  width: 660px;              /* ✅ 2 images + gap */
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slides img {
+  width: 320px;
+  height: 180px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* -------------------------
+name-box 
+---------------------------*/
+.name-box {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+}
+
+/* Fade-in animation */
+ .fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

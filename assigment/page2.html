@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery-bundle.min.css">
+    <meta charset="UTF-8">
+    <title>Dog Breeds </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="top-left-container">
+    <a href="index.html" class="top-left-link" title="Back to Home">🏠</a>
+    <span class="top-left-label">Back to Home</span>
+  </div>
+      <div class="top-right-container">
+    <a href="aboutweb.html" class="top-right-link" title="About This Webpage">ℹ️</a>
+    <span class="top-right-label">About This Webpage</span>
+  </div>
+    
+<input 
+  type="text" 
+  id="searchInput" 
+  placeholder="Search by breed name..."
+  onkeyup="applyFilters()"
+/>
+
+<p>Filter by friendliness</p>
+
+<select id="friendlinessFilter" onchange="applyFilters()">
+  <option value="">All</option>
+  <option value="10">10 (Very Friendly)</option>
+  <option value="9">9+</option>
+  <option value="8">8+</option>
+  <option value="7">7+</option>
+  <option value="6">6+</option>
+</select>
+
+
+<p>Select your favourite dog breed</p>
+
+<select id="breed" name="breed">
+  <option value=""></option>
+  <option value="Golden Retriever">🐕 Golden Retriever</option>
+  <option value="German Shepherd">🐺 German Shepherd</option>
+  <option value="Poodle">🐩 Poodle</option>
+  <option value="Great Dane">🐾 Great Dane</option>
+  <option value="Pug">🐶 Pug</option>
+  <option value="Doberman">🦴 Doberman</option>
+</select>
+
+
+<header>
+  <h1>🐶 Dog Breeds 🐶</h1>
+</header>
+
+<section id="uniform-gallery">
+  <a href="images/Golden-retriever.jpg" data-lg-size="600-600">
+    <img src="images/Golden-retriever.jpg"
+         alt="Golden Retriever lying in grass">
+  </a>
+
+  <a href="images/Pug.jpg" data-lg-size="600-600">
+    <img src="images/Pug.jpg"
+         alt="Pug sitting on a couch">
+  </a>
+
+<a href="images/Poodle.jpg" data-lg-size="600-600">
+    <img src="images/Poodle.jpg"
+         alt="Poodle standing outdoors">
+  </a>
+
+  <a href="images/Dobermen.jpg" data-lg-size="600-600">
+    <img src="images/Dobermen.jpg"
+         alt="Doberman standing alert">
+  </a>
+
+  <a href="images/German-shepherd.jpg" data-lg-size="600-600">
+    <img src="images/German-shepherd.jpg"
+         alt="German Shepherd running">
+  </a>
+
+<a href="images/Great-dane.jpg" data-lg-size="600-600">
+    <img src="images/Great-dane.jpg"
+         alt="Great Dane standing in field">
+  </a>
+</section>
+
+<div class="controls">
+  <button id="sortAsc" type="button">Sort by Name (A–Z)</button>
+  <button id="sortDesc" type="button">Sort by Name (Z–A)</button>
+</div>
+
+<p id="average"></p>
+
+<script id="dog-template" type="text/x-handlebars-template">
+  {{#each dogs}}
+    <div
+      class="card"
+      data-name="{{name}}"
+      data-friendliness="{{friendliness}}"
+    >
+      <img src="{{image}}" alt="{{name}}">
+      <h3>{{name}}</h3>
+
+      <p><strong>Origin:</strong> {{origin}}</p>
+      <p><strong>Size:</strong> {{size}}</p>
+      <p><strong>Lifespan:</strong> {{lifespan}} years</p>
+      <p><strong>Friendliness:</strong> {{friendliness}} /10</p>
+
+      <button onclick="deleteDog('{{name}}')">Delete</button>
+    </div>
+  {{/each}}
+</script>
+
+<h2>Add a New Dog Breed</h2>
+
+<form id="dogForm">
+  <input type="text" id="name" placeholder="Breed name" required>
+  <input type="text" id="origin" placeholder="Origin" required>
+  <input type="number" id="lifespan" placeholder="Lifespan" required>
+  <input type="text" id="size" placeholder="Size" required>
+  <input type="number" id="friendliness" placeholder="Friendliness (1–10)" required>
+  <input type="text" id="image" placeholder="Image path (images/dog.jpg)" required>
+
+  <button type="submit">Add Dog</button>
+</form>
+
+<div id="dog-container"></div>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="closeBtn">&times;</span>
+  <img id="lightboxImage" src="" alt="">
+</div>
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js">
+</script>
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/thumbnail/lg-thumbnail.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/zoom/lg-zoom.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/fullscreen/lg-fullscreen.min.js"></script>
+
+<script>
+lightGallery(document.querySelector('#uniform-gallery'), {
+    plugins: [lgZoom, lgThumbnail, lgFullscreen],
+    thumbWidth: 80,
+    controls: true,
+    getCaptionFromTitleOrAlt: true,
+    loop : true,
+    actualSize: false,
+    counter: true,
+    fullScreen: true,
+    zoom: true,
+    mode: 'lg-fade'
+});
+</script>
+<div class="name-box">
+ By - Josh Maher
+</div>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+<script src="dogs.js" defer></script>
+</body>
+</html>

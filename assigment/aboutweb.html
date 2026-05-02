@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About My Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+</head>
+<body>
+   
+
+
+<!-- Top-left: Home -->
+  <div class="top-left-container">
+    <a href="index.html" class="top-left-link" title="Back to Home">🏠</a>
+    <span class="top-left-label">Back to Home</span>
+  </div>
+
+<!-- Top-right: Dog Breeds -->
+  <div class="top-right-container">
+    <a href="page2.html" class="top-right-link" title="Dog Breeds Data">🐕</a>
+    <span class="top-right-label">Dog Breeds Data</span>
+  </div>
+
+
+<div class="carousel">
+    <div class="slides">
+       <img src="images/glimage.jpg" alt="Golden retriever lying in grass">
+       <img src="images/pugb.jpg" alt="Pug sitting on a couch">
+       <img src="images/poodlebeach.jpg" alt="Poodle playing at the beach">
+       <img src="images/themg.jpg" alt="Great Dane playing in the snow">
+       <img src="images/germain.jpg" alt="German Shepherd running in the forest">
+       <img src="images/funny.jpg" alt="Funny dog expression">
+    </div>
+
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+</div>
+
+
+    
+
+   
+    
+<div class="glass-box">
+  <h1>About This Webpage</h1>
+
+  <p>
+    This webpage is a simple pet database designed to provide information about
+    different dog breeds. It includes features such as searching for breeds by
+    name, filtering by friendliness, and viewing images of various dog breeds.
+  </p>
+
+  <p>
+    The webpage is built using HTML and CSS, with some JavaScript functionality
+    for interactivity. It serves as a basic example of how to create a
+    user-friendly interface for displaying information about pets.
+  </p>
+
+  <p>
+    Feel free to explore the different dog breeds and learn more about them!
+  </p>
+</div>
+<section class="dog-selector">
+<h2>Dog Breed Selector</h2>
+
+<form>
+  <select id="dogSelect" name="dog" size="6">
+    <option selected>Golden Retriever</option>
+    <option>Poodle</option>
+    <option>German Shepherd</option>
+    <option>Doberman</option>
+    <option>Great Dane</option>
+    <option>Pug</option>
+  </select>
+</form>
+</section>
+<br>
+
+<img
+  id="dogImage"
+  src="images/Golden retriever.jpg"
+  alt="Dog image"
+  width="320"
+  height="200"
+/>
+
+<script>
+  /* Image sources must match the order of the <option>s */
+  const dogImages = [
+    'images/Golden retriever.jpg',
+    'images/Poodle.jpg',
+    'images/German-shepherd.jpg',
+    'images/Dobermen.jpg',
+    'images/Great-dane.jpg',   // replace with Great Dane image if you have one
+    'images/Pug.jpg'
+  ];
+
+  const select = document.querySelector('#dogSelect');
+  const image = document.querySelector('#dogImage');
+
+  select.addEventListener('change', () => {
+    // selectedIndex is used to match select options to image array order
+    const index = select.selectedIndex;
+    image.src = dogImages[index];
+  });
+</script>
+
+<button id="showDogs">Show Dog Data</button>
+
+<div id="output"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const dogs = [
+      { name: "Golden Retriever", friendliness: 9 },
+      { name: "Poodle", friendliness: 8 },
+      { name: "German Shepherd", friendliness: 7 },
+      { name: "Doberman", friendliness: 8 },
+      { name: "Great Dane", friendliness: 7 },
+      { name: "Pug", friendliness: 7 }
+    ];
+
+    let dogData = localStorage.getItem("dogData");
+
+    if (dogData === null) {
+      localStorage.setItem("dogData", JSON.stringify(dogs));
+      dogData = dogs;
+    } else {
+      dogData = JSON.parse(dogData);
+    }
+
+    const button = document.getElementById("showDogs");
+    const output = document.getElementById("output");
+
+    button.addEventListener("click", () => {
+      output.innerHTML = ""; // clear output
+
+      dogData.forEach(dog => {
+        const p = document.createElement("p");
+        p.textContent = `${dog.name} – Friendliness: ${dog.friendliness}`;
+        output.appendChild(p);
+      });
+    });
+
+});
+</script>
+<section class="comments">
+<h3>Comments</h3>
+
+<form id="commentForm">
+  <input type="text" id="name" placeholder="Your name" required>
+  <br><br>
+  <textarea id="message" placeholder="Your comment" required></textarea>
+  <br><br>
+  <button type="submit">Add Comment</button>
+</form>
+
+<hr>
+
+<!-- Where comments will appear -->
+<div id="commentsOutput"></div>
+
+<script id="comments-template" type="text/x-handlebars-template">
+  {{#each comments}}
+    <div class="comment">
+      <strong>{{name}}</strong>
+      <p>{{message}}</p>
+      <hr>
+    </div>
+  {{/each}}
+</script>
+</section>
+<script>
+  // Comments array to hold comment data
+  const comments = [
+    { name: "Sean", message: "Great website!" },
+    { name: "Cian", message: "Very useful project." }
+  ];
+
+  const commentsOutput = document.getElementById("commentsOutput");
+  const templateSource = document.getElementById("comments-template").innerHTML;
+  const template = Handlebars.compile(templateSource);
+
+  function renderComments() {
+    // Most recent first
+    const html = template({ comments: [...comments].reverse() });
+    commentsOutput.innerHTML = html;
+  }
+
+  // Initial render
+  renderComments();
+
+  // Handle form submission
+  document.getElementById("commentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    comments.push({ name, message });
+
+    renderComments();
+    this.reset();
+  });
+</script>
+
+
+<div class="name-box">
+ By - Josh Maher
+</div>
+
+<script>
+  const slides = document.querySelector(".slides");
+  const images = document.querySelectorAll(".slides img");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  const gap = 20;          // same as CSS gap
+  const imageWidth = 320;  // same as CSS image width
+  const visibleImages = 2;
+
+  let index = 0;
+
+  const maxIndex = images.length - visibleImages;
+
+  function updateCarousel() {
+
+const moveX = index * (imageWidth + gap);
+    slides.style.transform = `translateX(-${moveX}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < maxIndex) {
+      index++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+
+index--;
+      updateCarousel();
+    }
+  });
+</script>
+
+</body>
+</html>
